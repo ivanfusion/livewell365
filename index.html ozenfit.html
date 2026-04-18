@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Médica Revela: O Segredo Que as Farmácias Não Querem que Você Saiba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde:     #1A7A3C;
+    --verde-lt:  #2DAB56;
+    --verde-xl:  #C8F0D5;
+    --laranja:   #E8621A;
+    --laranja-lt:#FF8040;
+    --amarelo:   #F5C842;
+    --creme:     #FBF8F2;
+    --escuro:    #1C1C1C;
+    --cinza:     #5A5A5A;
+    --borda:     #D8D0C0;
+    --radius:    10px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: #fff;
+    color: var(--escuro);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── BARRA TOPO ── */
+  .top-bar {
+    background: var(--laranja);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .3px;
+    animation: pulse-bar 2s ease-in-out infinite;
+  }
+  @keyframes pulse-bar {
+    0%,100% { background: var(--laranja); }
+    50%      { background: var(--laranja-lt); }
+  }
+
+  /* ── CABEÇALHO EDITORIAL ── */
+  .cabecalho {
+    background: var(--escuro);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-bottom: 3px solid var(--verde-lt);
+  }
+  .logo-editorial {
+    font-family: 'Merriweather', serif;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+  }
+  .logo-editorial span { color: var(--verde-lt); }
+  .tag-editorial {
+    background: var(--verde);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── HEADLINE HERO ── */
+  .hero {
+    background: var(--creme);
+    border-bottom: 2px solid var(--borda);
+    padding: 50px 20px 40px;
+  }
+  .hero-categoria {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--laranja);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.25;
+    color: var(--escuro);
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    color: var(--verde);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: var(--cinza);
+    max-width: 680px;
+    margin-bottom: 24px;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #888;
+    border-top: 1px solid var(--borda);
+    padding-top: 16px;
+  }
+  .hero-meta strong { color: var(--escuro); }
+  .hero-meta .dot { color: var(--borda); }
+
+  /* ── IMAGEM DESTAQUE ── */
+  .img-destaque {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    display: block;
+    background: linear-gradient(135deg, #E8F5EE 0%, #C8F0D5 100%);
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .img-destaque-inner {
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+  }
+  .img-destaque-inner .emoji-produto { font-size: 80px; display: block; margin-bottom: 12px;
+    animation: float 3s ease-in-out infinite; }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+  }
+  .img-destaque-inner p { font-size: 15px; color: var(--verde); font-weight: 600; }
+  .img-badge {
+    position: absolute; top: 16px; right: 16px;
+    background: var(--laranja); color: #fff;
+    font-size: 12px; font-weight: 700;
+    padding: 6px 14px; border-radius: 20px;
+    letter-spacing: .5px;
+  }
+
+  /* ── ARTIGO ── */
+  .artigo { padding: 40px 20px; }
+  .artigo p { margin-bottom: 20px; color: var(--escuro); }
+  .artigo p.lead {
+    font-size: 20px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #333;
+    border-left: 4px solid var(--verde-lt);
+    padding-left: 20px;
+    margin-bottom: 32px;
+  }
+  .artigo h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 900;
+    color: var(--escuro);
+    margin: 36px 0 16px;
+    line-height: 1.3;
+  }
+  .artigo h2.verde { color: var(--verde); }
+  .artigo h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--escuro);
+    margin: 28px 0 10px;
+  }
+  .destaque-texto {
+    background: var(--verde-xl);
+    border-left: 5px solid var(--verde);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 18px 22px;
+    margin: 28px 0;
+    font-size: 17px;
+    color: #1A3A26;
+    line-height: 1.7;
+  }
+  .destaque-texto strong { color: var(--verde); }
+
+  /* ── BOX PROBLEMA ── */
+  .box-problema {
+    background: #FFF5F0;
+    border: 2px solid #FFCBB0;
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 32px 0;
+  }
+  .box-problema h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--laranja);
+    font-size: 18px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .problema-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #FFE0D0;
+    font-size: 16px;
+  }
+  .problema-item:last-child { border-bottom: none; }
+  .problema-item .x { color: var(--laranja); font-weight: 700; font-size: 18px; }
+
+  /* ── BOX INGREDIENTES ── */
+  .ingr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 28px 0;
+  }
+  .ingr-card {
+    background: #fff;
+    border: 1.5px solid var(--borda);
+    border-radius: var(--radius);
+    padding: 18px 16px;
+    border-top: 4px solid var(--verde-lt);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .ingr-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .ingr-emoji { font-size: 28px; margin-bottom: 8px; display: block; }
+  .ingr-card h4 { font-size: 14px; font-weight: 700; color: var(--verde); margin-bottom: 6px; }
+  .ingr-card p { font-size: 13px; color: var(--cinza); line-height: 1.5; margin: 0; }
+
+  /* ── DEPOIMENTOS ── */
+  .depo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 28px 0;
+  }
+  .depo-card {
+    background: var(--creme);
+    border-radius: var(--radius);
+    padding: 20px;
+    border: 1px solid var(--borda);
+    position: relative;
+  }
+  .depo-card::before {
+    content: '"';
+    font-family: 'Merriweather', serif;
+    font-size: 64px;
+    color: var(--verde-lt);
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    line-height: 1;
+  }
+  .depo-texto { font-size: 14px; color: #333; line-height: 1.65; margin-bottom: 14px; padding-top: 20px; font-style: italic; }
+  .depo-autor { display: flex; align-items: center; gap: 10px; }
+  .depo-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--verde); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .depo-nome { font-size: 13px; font-weight: 700; color: var(--escuro); }
+  .depo-loc { font-size: 12px; color: #888; }
+  .estrelas { color: var(--amarelo); font-size: 13px; }
+
+  /* ── CTA BOX ── */
+  .cta-box {
+    background: linear-gradient(135deg, var(--verde) 0%, #0F5228 100%);
+    border-radius: 16px;
+    padding: 40px 32px;
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,.06);
+    border-radius: 50%;
+  }
+  .cta-urgencia {
+    background: var(--amarelo);
+    color: var(--escuro);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 20px;
+    letter-spacing: .5px;
+    animation: shake 2s ease-in-out infinite;
+  }
+  @keyframes shake {
+    0%,100%{ transform: rotate(-1deg); }
+    50%    { transform: rotate(1deg); }
+  }
+  .cta-box h2 {
+    font-family: 'Merriweather', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    color: #fff;
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+  .cta-box p { color: rgba(255,255,255,.88); font-size: 16px; margin-bottom: 28px; }
+  .btn-cta {
+    display: inline-block;
+    background: var(--amarelo);
+    color: var(--escuro);
+    font-size: 20px;
+    font-weight: 700;
+    padding: 18px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    letter-spacing: .3px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.3);
+    transition: transform .2s, box-shadow .2s;
+    display: block;
+    max-width: 480px;
+    margin: 0 auto 16px;
+    line-height: 1.3;
+  }
+  .btn-cta:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 40px rgba(0,0,0,.4); }
+  .cta-sub { font-size: 13px; color: rgba(255,255,255,.7); }
+  .selos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .selo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,.85);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .selo span { font-size: 18px; }
+
+  /* ── COMPARAÇÃO ── */
+  .comparacao {
+    background: var(--creme);
+    border: 1.5px solid var(--borda);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 32px 0;
+  }
+  .comparacao-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--escuro);
+    color: #fff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .comparacao-header div { padding: 12px 8px; }
+  .comparacao-header .destaque-col { background: var(--verde); }
+  .comparacao-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--borda);
+    text-align: center;
+  }
+  .comparacao-row:last-child { border-bottom: none; }
+  .comparacao-row div { padding: 12px 8px; font-size: 14px; }
+  .comparacao-row .col-item { text-align: left; padding-left: 16px; font-weight: 600; color: var(--escuro); }
+  .comparacao-row .col-nao { color: #CC3300; font-size: 18px; }
+  .comparacao-row .col-sim { color: var(--verde); font-size: 18px; font-weight: 700; }
+  .comparacao-row .destaque-col { background: rgba(45,171,86,.08); }
+
+  /* ── PERGUNTAS FREQUENTES ── */
+  .faq-item {
+    border-bottom: 1px solid var(--borda);
+    padding: 18px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-weight: 700; color: var(--escuro); font-size: 16px; margin-bottom: 8px; display: flex; gap: 10px; }
+  .faq-q::before { content: 'P:'; color: var(--verde); flex-shrink: 0; }
+  .faq-a { font-size: 15px; color: var(--cinza); line-height: 1.65; padding-left: 26px; }
+
+  /* ── AVISO ── */
+  .aviso-estoque {
+    background: #FFF3CD;
+    border: 2px solid #FFC107;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-size: 15px;
+    color: #856404;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .aviso-estoque .icon { font-size: 22px; flex-shrink: 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--escuro);
+    color: rgba(255,255,255,.5);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  footer a { color: rgba(255,255,255,.5); }
+  .disclaimer {
+    background: #F5F5F5;
+    border-top: 1px solid var(--borda);
+    padding: 20px;
+    font-size: 11px;
+    color: #888;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* ── STICKY CTA MOBILE ── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--verde);
+    padding: 12px 20px;
+    text-align: center;
+    z-index: 999;
+    box-shadow: 0 -4px 20px rgba(0,0,0,.2);
+    display: none;
+  }
+  .sticky-cta a {
+    display: block;
+    background: var(--amarelo);
+    color: var(--escuro);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .sticky-cta { display: block; }
+    body { padding-bottom: 72px; }
+    .ingr-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- BARRA TOPO -->
+<div class="top-bar">
+  🔥 ATENÇÃO: Estoque limitado — Últimas unidades com desconto especial!
+</div>
+
+<!-- CABEÇALHO -->
+<header class="cabecalho">
+  <div class="logo-editorial">Saúde<span>Viva</span> News</div>
+  <span class="tag-editorial">Reportagem Especial</span>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-categoria">Saúde & Bem-Estar · Emagrecimento Natural</div>
+    <h1>Nutricionista Revela a Combinação de <em>10 Ativos Naturais</em> Que Está Fazendo Milhares de Brasileiras Perderem Medidas Sem Passar Fome</h1>
+    <p class="hero-sub">Depois que a fórmula do OzenFit Caps veio à tona, o assunto tomou conta dos grupos de saúde no Brasil. Mas o que há de especial nesses ingredientes? Leia até o final antes de tomar qualquer decisão.</p>
+    <div class="hero-meta">
+      <span>Por <strong>Redação SaúdeViva</strong></span>
+      <span class="dot">•</span>
+      <span>Atualizado em <strong>Abril de 2026</strong></span>
+      <span class="dot">•</span>
+      <span>⏱ Leitura: <strong>4 minutos</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGEM DESTAQUE -->
+<div class="container">
+  <div class="img-destaque">
+    <div class="img-destaque-inner">
+      <span class="emoji-produto">💊</span>
+      <p>OzenFit Caps — Fórmula 100% Natural · Aprovado ANVISA</p>
+    </div>
+    <div class="img-badge">ANVISA Aprovado</div>
+  </div>
+</div>
+
+<!-- ARTIGO PRINCIPAL -->
+<article class="artigo">
+  <div class="container">
+
+    <p class="lead">"Eu tentei de tudo. Dieta, academia, shake, remédio. Nada funcionava por mais de 30 dias. Aí uma amiga me falou do OzenFit Caps e... em 3 semanas o inchaço sumiu. Em 2 meses perdi 9kg." — Fernanda, 38 anos, São Paulo.</p>
+
+    <p>Se você está lendo isso, provavelmente já passou pela frustração de iniciar uma dieta com garra, manter por alguns dias e logo perceber que a fome, o cansaço e a compulsão voltam com força total. Não é fraqueza. É química.</p>
+
+    <p>O problema não está na sua força de vontade. Está em como seu metabolismo responde — e é exatamente aí que o OzenFit Caps entra.</p>
+
+    <!-- BOX PROBLEMA -->
+    <div class="box-problema">
+      <h3>⚠️ Você se identifica com algum desses problemas?</h3>
+      <div class="problema-item"><span class="x">✗</span><span>Sente fome pouco tempo depois de comer</span></div>
+      <div class="problema-item"><span class="x">✗</span><span>Não consegue resistir ao doce à tarde ou à noite</span></div>
+      <div class="problema-item"><span class="x">✗</span><span>Fica sem energia para se exercitar</span></div>
+      <div class="problema-item"><span class="x">✗</span><span>O ventre cresce mesmo sem comer muito</span></div>
+      <div class="problema-item"><span class="x">✗</span><span>Já tentou várias dietas e nenhuma funcionou a longo prazo</span></div>
+    </div>
+
+    <p>Se você marcou ao menos dois desses itens, o seu metabolismo está pedindo socorro — e uma simples mudança de suplementação pode ser o ponto de virada que faltava.</p>
+
+    <h2>O Que é o OzenFit Caps e Por Que Está Gerando Tanto Burburinho?</h2>
+
+    <p>OzenFit Caps é um <strong>nutracêutico emagrecedor 100% natural</strong>, desenvolvido com 10 ativos cuidadosamente combinados para agir em múltiplas frentes do emagrecimento ao mesmo tempo: saciedade, metabolismo, energia, digestão e controle da compulsão.</p>
+
+    <p>Diferente dos remédios que manipulam hormônios ou cortam o apetite de forma agressiva, o OzenFit trabalha <em>com o seu corpo</em>, não contra ele. Por isso os resultados aparecem de forma gradual, consistente e — o mais importante — sustentável.</p>
+
+    <div class="destaque-texto">
+      <strong>O segredo está na sinergia:</strong> cada ingrediente foi escolhido não apenas pelo seu efeito individual, mas por como potencializa os outros. Juntos, eles criam uma ação que nenhum ativo isolado conseguiria.
+    </div>
+
+    <h2 class="verde">Os 10 Ingredientes Que Fazem a Diferença</h2>
+    <p>Veja o que está dentro de cada cápsula do OzenFit Caps — e por que cada um foi incluído:</p>
+
+    <div class="ingr-grid">
+      <div class="ingr-card">
+        <span class="ingr-emoji">🌾</span>
+        <h4>Psyllium</h4>
+        <p>Fibra solúvel que forma um gel no estômago, aumentando a saciedade e regulando o intestino. Reduz o colesterol ruim.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">🌿</span>
+        <h4>Curcumina</h4>
+        <p>Extrato da cúrcuma com ação anti-inflamatória e antioxidante potente. Reduz o acúmulo de gordura e combate a inflamação metabólica.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">⚡</span>
+        <h4>Guaraná em Pó</h4>
+        <p>Energia natural sem os picos e quedas da cafeína sintética. Aumenta a disposição para treinos e atividades do dia a dia.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">😊</span>
+        <h4>Triptofano</h4>
+        <p>Precursor da serotonina — o "hormônio da felicidade". Reduz a compulsão por carboidratos e melhora o humor e o sono.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">🔥</span>
+        <h4>Piperina</h4>
+        <p>Extrato da pimenta preta que potencializa a absorção de todos os outros nutrientes em até 2.000%. O verdadeiro amplificador da fórmula.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">☕</span>
+        <h4>Ácido Clorogênico</h4>
+        <p>Fitoquímico do café verde que inibe o acúmulo de gordura, reduz a glicose no sangue e acelera o metabolismo de carboidratos.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">🫐</span>
+        <h4>Antocianinas</h4>
+        <p>Pigmentos antioxidantes de frutas roxas que combatem a obesidade metabólica, controlam a glicemia e diminuem o acúmulo de gordura.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">🔬</span>
+        <h4>Picolinato de Cromo</h4>
+        <p>Regula a insulina, controla o apetite e reduz a compulsão alimentar. Estabiliza os níveis de glicose no sangue.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">🌱</span>
+        <h4>Inulina</h4>
+        <p>Prebiótico natural que alimenta as bactérias boas do intestino, melhora a microbiota e potencializa a digestão.</p>
+      </div>
+      <div class="ingr-card">
+        <span class="ingr-emoji">💪</span>
+        <h4>L-Carnitina</h4>
+        <p>Transporta ácidos graxos para dentro das mitocôndrias para serem queimados como energia. Acelera a oxidação de gordura.</p>
+      </div>
+    </div>
+
+    <!-- CTA 1 -->
+    <div class="cta-box">
+      <div class="cta-urgencia">⏰ Oferta por tempo limitado</div>
+      <h2>Quero Conhecer o OzenFit Caps Com Desconto</h2>
+      <p>Mais de 4.000 clientes satisfeitos · Aprovado pela ANVISA · 100% Natural · Sem Glúten</p>
+      <a href="https://ev.braip.com/campanhas/cpa/camdm91n8" class="btn-cta" target="_blank">
+        ✅ SIM! QUERO EMAGRECER COM SAÚDE →
+      </a>
+      <p class="cta-sub">🔒 Compra 100% segura · Pagamento criptografado · Frete para todo Brasil</p>
+      <div class="selos">
+        <div class="selo"><span>🛡️</span> ANVISA</div>
+        <div class="selo"><span>🌿</span> 100% Natural</div>
+        <div class="selo"><span>🚚</span> Frete Grátis</div>
+        <div class="selo"><span>⭐</span> 4.3/5 estrelas</div>
+      </div>
+    </div>
+
+    <h2>Como o OzenFit Age no Seu Corpo — Na Prática</h2>
+
+    <p>Muita gente pensa que suplemento é "mais do mesmo". Que vai tomar, não vai sentir nada e vai parar em 2 semanas. Com o OzenFit a experiência costuma ser diferente — porque ele age em 4 frentes ao mesmo tempo:</p>
+
+    <h3>1. Saciedade Real — Sem Passar Fome</h3>
+    <p>O Psyllium absorve água e forma um gel no estômago, criando uma sensação de "estômago cheio" que dura horas. Isso significa menos beliscos, porções menores e fim da ansiedade na hora do almoço.</p>
+
+    <h3>2. Metabolismo Acelerado — Queimando Mesmo em Repouso</h3>
+    <p>A combinação de Guaraná, Ácido Clorogênico e L-Carnitina cria um ambiente termogênico no organismo. Seu corpo passa a usar gordura como combustível com mais eficiência — mesmo quando você não está treinando.</p>
+
+    <h3>3. Adeus Compulsão — O Papel do Triptofano</h3>
+    <p>A compulsão por doce à tarde? Geralmente é sinal de queda na serotonina. O Triptofano é o bloco de construção da serotonina, ajudando o cérebro a se sentir satisfeito naturalmente — sem depender de açúcar.</p>
+
+    <h3>4. Intestino Funcionando — A Base de Tudo</h3>
+    <p>Inulina e Psyllium juntos criam as condições ideais para uma microbiota intestinal saudável. E um intestino que funciona bem é fundamental para qualquer processo de emagrecimento que se sustente.</p>
+
+    <div class="destaque-texto">
+      💡 <strong>Curiosidade:</strong> A Piperina (extrato de pimenta preta) potencializa em até 2.000% a absorção dos outros ingredientes pelo organismo. É por isso que a combinação em cápsula é muito mais eficaz do que tomar cada ativo separado.
+    </div>
+
+    <!-- COMPARAÇÃO -->
+    <h2>OzenFit Caps vs. Outras Opções do Mercado</h2>
+    <div class="comparacao">
+      <div class="comparacao-header">
+        <div>Característica</div>
+        <div>Remédios / Inibidores</div>
+        <div class="destaque-col">✅ OzenFit Caps</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Ingredientes naturais</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Sem hormônios artificiais</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Age na compulsão</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Melhora o intestino</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Dá energia sem ansiedade</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Aprovado pela ANVISA</div>
+        <div>Alguns</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+      <div class="comparacao-row">
+        <div class="col-item">Sem glúten</div>
+        <div class="col-nao">✗</div>
+        <div class="col-sim destaque-col">✓</div>
+      </div>
+    </div>
+
+    <!-- DEPOIMENTOS -->
+    <h2>O Que Quem Já Usou Está Dizendo</h2>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="depo-texto">Comecei a tomar há 2 meses e já perdi 8kg! O melhor é que não sinto mais aquela vontade de comer doce toda hora. Estou muito mais disposta para malhar!</div>
+        <div class="depo-autor">
+          <div class="depo-avatar">🙋‍♀️</div>
+          <div>
+            <div class="depo-nome">Camila R.</div>
+            <div class="depo-loc">São Paulo — SP</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-texto">Produto de qualidade! Não causa nenhum efeito colateral e realmente ajuda a controlar o apetite. Em 3 semanas o inchaço já diminuiu muito.</div>
+        <div class="depo-autor">
+          <div class="depo-avatar">🙋‍♀️</div>
+          <div>
+            <div class="depo-nome">Rafaela M.</div>
+            <div class="depo-loc">Belo Horizonte — MG</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="depo-card">
+        <div class="depo-texto">Uso há 3 meses e já eliminei 12kg. Combinado com caminhadas, os resultados foram além do que eu esperava. Recomendo demais!</div>
+        <div class="depo-autor">
+          <div class="depo-avatar">🙋‍♀️</div>
+          <div>
+            <div class="depo-nome">Patricia O.</div>
+            <div class="depo-loc">Curitiba — PR</div>
+            <div class="estrelas">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AVISO ESTOQUE -->
+    <div class="aviso-estoque">
+      <span class="icon">⚠️</span>
+      <span>Devido à alta demanda, o estoque do OzenFit Caps está acabando rapidamente. Os kits com maior desconto costumam ser os primeiros a esgotar. Se você chegou até aqui, é porque ainda há unidades disponíveis — mas isso pode mudar nas próximas horas.</span>
+    </div>
+
+    <!-- CTA 2 -->
+    <div class="cta-box">
+      <div class="cta-urgencia">🎯 Clique agora e veja os kits disponíveis</div>
+      <h2>Quero Começar Minha Transformação Hoje</h2>
+      <p>2 cápsulas por dia · Antes do café da manhã e jantar · Frete para todo o Brasil</p>
+      <a href="https://ev.braip.com/campanhas/cpa/camdm91n8" class="btn-cta" target="_blank">
+        🌿 ACESSAR O SITE OFICIAL COM DESCONTO →
+      </a>
+      <p class="cta-sub">✅ Pagamento seguro · Boleto, Pix ou Cartão · Entrega em até 15 dias úteis</p>
+      <div class="selos">
+        <div class="selo"><span>🔒</span> Ambiente Seguro</div>
+        <div class="selo"><span>🌿</span> Sem Hormônios</div>
+        <div class="selo"><span>🌾</span> Sem Glúten</div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+      <div class="faq-q">O OzenFit Caps tem aprovação da ANVISA?</div>
+      <div class="faq-a">Sim. O OzenFit Caps está totalmente alinhado com as normas da ANVISA para suplementos alimentares, sendo dispensado de registro por se tratar de um nutracêutico natural seguro para consumo.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Como tomar o OzenFit Caps?</div>
+      <div class="faq-a">A posologia recomendada é de 2 cápsulas por dia — 1 antes do café da manhã e 1 antes do jantar, preferencialmente com um copo d'água. O uso contínuo potencializa os resultados.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Em quanto tempo verei resultados?</div>
+      <div class="faq-a">Muitos usuários relatam melhorias na saciedade e na disposição já nas primeiras semanas. Para resultados mais expressivos em redução de medidas, o uso contínuo por pelo menos 30 a 60 dias é recomendado.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Tem contra-indicações?</div>
+      <div class="faq-a">Por ser composto por ingredientes naturais, o produto é bem tolerado pela maioria das pessoas. Gestantes, lactantes e pessoas com condições de saúde específicas devem consultar um médico antes de usar. Não indicado para menores de 18 anos.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Onde comprar com garantia de autenticidade?</div>
+      <div class="faq-a">Para garantir produto original, compre exclusivamente pelo site oficial do fabricante. Evite revendedores não autorizados em marketplaces, pois podem oferecer produtos adulterados sem qualidade garantida.</div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="cta-box" style="margin-bottom:0">
+      <div class="cta-urgencia">🌟 Você chegou até aqui — é hora de agir</div>
+      <h2>Sua Transformação Começa Com Uma Decisão</h2>
+      <p>Você já tem a informação. Já conhece os ingredientes, os benefícios e os resultados reais de quem usou. O próximo passo é seu.</p>
+      <a href="https://ev.braip.com/campanhas/cpa/camdm91n8" class="btn-cta" target="_blank">
+        💊 QUERO O OZENFIT CAPS AGORA →
+      </a>
+      <p class="cta-sub">🔒 Site Oficial · Pagamento Seguro · Frete para Todo o Brasil</p>
+    </div>
+
+  </div>
+</article>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <div class="container">
+    Esta página é mantida por um afiliado independente e não representa diretamente o fabricante do OzenFit Caps. Os resultados apresentados são individuais e podem variar de pessoa para pessoa. OzenFit Caps é um suplemento alimentar e não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Consulte um profissional de saúde antes de iniciar qualquer suplementação. Os depoimentos são de usuários reais e os resultados podem diferir. Este produto não substitui alimentação equilibrada e hábitos saudáveis de vida.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 SaúdeViva News · Site de Conteúdo Editorial Independente</p>
+  <p style="margin-top:6px">Este site utiliza links de afiliados. Podemos receber comissão nas compras realizadas através dos nossos links, sem custo adicional para você.</p>
+</footer>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta">
+  <a href="https://ev.braip.com/campanhas/cpa/camdm91n8" target="_blank">💊 QUERO O OZENFIT CAPS →</a>
+</div>
+
+</body>
+</html>

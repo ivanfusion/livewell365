@@ -557,7 +557,66 @@ footer a { color: rgba(255,255,255,0.5); }
   <div class="product">
     <div class="product-img-wrap">
       <div class="product-badge">BESTSELLER</div>
-      <img src="https://prodentim24.com/assets/images/prodentim-bottle.webp" alt="ProDentim bottle" onerror="this.src='https://getprodentim.com/assets/images/prodentim-6bottles.webp';this.onerror=function(){this.style.background='#d8f3dc';this.style.height='320px';this.style.borderRadius='12px';}">
+      <svg viewBox="0 0 280 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;margin:0 auto;display:block;">
+        <defs>
+          <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1a4a3a"/>
+            <stop offset="40%" style="stop-color:#2d6a4f"/>
+            <stop offset="100%" style="stop-color:#1a4a3a"/>
+          </linearGradient>
+          <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#c9a227"/>
+            <stop offset="100%" style="stop-color:#8a6c10"/>
+          </linearGradient>
+          <linearGradient id="labelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#ffffff"/>
+            <stop offset="100%" style="stop-color:#f0f8f4"/>
+          </linearGradient>
+          <filter id="shadow">
+            <feDropShadow dx="4" dy="8" stdDeviation="8" flood-opacity="0.25"/>
+          </filter>
+        </defs>
+        <!-- Bottle body -->
+        <rect x="70" y="90" width="140" height="250" rx="22" fill="url(#bottleGrad)" filter="url(#shadow)"/>
+        <!-- Bottle shine -->
+        <rect x="80" y="100" width="20" height="220" rx="10" fill="rgba(255,255,255,0.08)"/>
+        <!-- Cap -->
+        <rect x="90" y="55" width="100" height="45" rx="12" fill="url(#capGrad)"/>
+        <rect x="100" y="48" width="80" height="16" rx="8" fill="#b5852a"/>
+        <!-- Label background -->
+        <rect x="82" y="118" width="116" height="195" rx="10" fill="url(#labelGrad)"/>
+        <!-- Green accent top -->
+        <rect x="82" y="118" width="116" height="22" rx="10" fill="#2d6a4f"/>
+        <rect x="82" y="128" width="116" height="12" fill="#2d6a4f"/>
+        <!-- ProDentim text -->
+        <text x="140" y="112" text-anchor="middle" font-family="Georgia,serif" font-size="7" font-weight="700" fill="white" letter-spacing="1">ADVANCED FORMULA</text>
+        <text x="140" y="153" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="900" fill="#1a3a2a">Pro</text>
+        <text x="140" y="172" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="900" fill="#2d6a4f">Dentim</text>
+        <!-- Divider -->
+        <line x1="95" y1="180" x2="185" y2="180" stroke="#2d6a4f" stroke-width="1" opacity="0.3"/>
+        <!-- Probiotic badge -->
+        <rect x="100" y="187" width="80" height="18" rx="9" fill="#2d6a4f"/>
+        <text x="140" y="199" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" font-weight="700" fill="white">3.5 BILLION PROBIOTICS</text>
+        <!-- Description lines -->
+        <text x="140" y="220" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#4a4a4a">Advanced Oral Health</text>
+        <text x="140" y="232" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" fill="#4a4a4a">Probiotic Formula</text>
+        <!-- Icons row -->
+        <text x="104" y="258" text-anchor="middle" font-size="14">🦷</text>
+        <text x="140" y="258" text-anchor="middle" font-size="14">🌿</text>
+        <text x="176" y="258" text-anchor="middle" font-size="14">✨</text>
+        <!-- Bottom label -->
+        <rect x="82" y="272" width="116" height="30" rx="0" fill="#2d6a4f"/>
+        <rect x="82" y="291" width="116" height="11" rx="0" fill="#1a4a3a"/>
+        <text x="140" y="285" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="white" letter-spacing="0.5">60-DAY GUARANTEE</text>
+        <text x="140" y="298" text-anchor="middle" font-family="Arial,sans-serif" font-size="6.5" fill="#a8d5b5">GMP CERTIFIED · FDA REGISTERED</text>
+        <!-- Capsules decorative -->
+        <ellipse cx="48" cy="200" rx="14" ry="6" fill="#52b788" opacity="0.7" transform="rotate(-30,48,200)"/>
+        <ellipse cx="48" cy="200" rx="7" ry="6" fill="#2d6a4f" opacity="0.7" transform="rotate(-30,48,200)"/>
+        <ellipse cx="232" cy="180" rx="14" ry="6" fill="#52b788" opacity="0.7" transform="rotate(25,232,180)"/>
+        <ellipse cx="232" cy="180" rx="7" ry="6" fill="#2d6a4f" opacity="0.7" transform="rotate(25,232,180)"/>
+        <ellipse cx="55" cy="240" rx="12" ry="5" fill="#b7e4c7" opacity="0.6" transform="rotate(15,55,240)"/>
+        <ellipse cx="225" cy="230" rx="12" ry="5" fill="#b7e4c7" opacity="0.6" transform="rotate(-20,225,230)"/>
+      </svg>
     </div>
     <div class="product-text">
       <p class="label">The Solution</p>
